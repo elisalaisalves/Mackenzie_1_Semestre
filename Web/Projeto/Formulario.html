@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+    <head>
+        <title>Formulário</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="estilo.css" /> 
+        <script src="https://kit.fontawesome.com/463b680dd2.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+
+        <style>
+            #first-td{
+                width:80%;
+            }
+
+            input[type=submit],[type=reset]{
+                font-weight: bold;
+                font-size: 22px;
+                background-color:#0582ca;
+                color: #fff;
+                margin: 4px 2px;
+                padding: 16px 32px;
+                cursor: pointer;
+                border: none;
+                border-radius: 5px;
+            }
+
+            input[type=text],[type=email],[type=tel],[type=date],[type=number],[type=color]{
+                border-radius: 5px;
+            }
+
+            fieldset{
+                width: 1250px;
+                border-color:#012a4a;
+                border-radius: 5px;
+                padding: 16px;
+            }
+
+            datalist{
+                border-radius: 5px;
+            }
+
+            textarea{
+                border-radius: 5px;
+                font-size: 16px;
+            }
+
+            legend{
+                padding: 10px;
+                font-size: 22px;
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <nav>
+            <p id="titulo">Tecnologia da Informação</p>
+            <ul class="nav-links">
+                <li><a href="Home.html"><i class="fa-sharp fa-solid fa-house-lock"></i><p>Home</p></a></li>
+                <li><a href="Carreiras.html"><i class="fa-solid fa-briefcase"></i><p>Carreiras</p></a></li>
+                <li><a href="Curiosidades.html"><i class="fa-solid fa-star"></i><p>Curiosidades</p></a></li>
+                <li><a href="Formulario.html"><i class="fa-solid fa-comments"></i><p>Fale Conosco</p></a></li>
+            </ul>
+        </nav>
+
+        <section>
+            <table>
+                <tbody>
+                    <tr>
+                        <td id="first-td">
+                            <h2>Fale Conosco</h2>
+    
+                            <!-- elemento label serve para nomear o campo e direcionar a ação do mouse qnd interage com o usuário
+                            atributo name é utilizado para referenciar dados do formulario qnd é dado o envio
+                            atributo id é usado para indicar um id para cada elemento do HTML
+                            -->
+                            <form method="post" action="" id="contato">
+                                <fieldset>
+                                    <legend><b>Queremos conhecer você:</b></legend>
+                                    
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td><label for="name">Nome: </label></td>
+                                                <td><input type="text" name="name" id="name" value="" maxlength="50" autofocus size="50" required></td>
+                                            </tr>
+                                            <tr>
+                                                <td><label for="email">E-mail: </label></td>
+                                                <td><input type="email" name="email" id="email" value="" autocomplete="off" size="50" required></td>
+                                            </tr>
+                                            <tr>
+                                                <td><label for="phone">Telefone: </label></td>
+                                                <td><input type="tel" id="phone" name="phone" placeholder="(11) 11234-5678" pattern="^?d2\d{4}[-\s]\d{4}$" maxlength="15"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><small>*Formato: </small></td>
+                                                <td>(11) 11234-5678</td>
+                                            </tr>
+                                            <tr>
+                                                <td><label for="city">Cidade: </label></td>
+                                                <td><input type="text" name="city" id="city" value="" size="35" required></td>
+                                            </tr>
+                                            <tr>
+                                                <td><label for="estado">Estado: </label></td>
+                                                <td>
+                                                    <input id="estado" list="listaestados" size="35" required>
+                                                    <datalist id="listaestados">
+                                                        <option value="São Paulo">São Paulo</option>
+                                                        <option value="Minas Gerais">Minas Gerais</option>
+                                                        <option value="Bahia">Bahia</option>
+                                                        <option value="Paraná">Paraná</option>
+                                                        <option value="Ceará">Ceará</option>
+                                                    </datalist>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><label for="aniversario">Aniversário:</label></td>
+                                                <td><input type="date" id="aniversario" required></td>
+                                            </tr>
+                                            <tr>
+                                                <td><label for="idade">Idade:</label></td>
+                                                <td><input type="number" id="idade" min="1" max="150" required></td>
+                                            </tr>
+                                            <tr>
+                                                <td><label for="cor">Cor preferida:</label></td>
+                                                <td><input type="color" id="cor"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <br>                          
+                                </fieldset>
+    
+                                <fieldset>
+                                    <legend><b>Opinião:</b></legend>
+                                    <p>Deseja receber mais informações:</p>
+                                    <input type="radio" id="sim" name="radio" value="sim">
+                                    <label for="sim">sim</label><br>
+                                    <input type="radio" id="nao" name="radio" value="nao">
+                                    <label for="nao">não</label><br>
+                    
+                                    <p>Indique que assuntos você gostaria de ver mais no site: </p>
+                                    <input type="checkbox" id="tutorial" name="tutorial" value="Tutoriais">
+                                    <label for="tutorial">Tutoriais</label><br>
+                                    <input type="checkbox" id="carreira" name="carreira" value="Carreira">
+                                    <label for="carreira">Carreira</label><br>
+                                    <input type="checkbox" id="video" name="video" value="Videos">
+                                    <label for="video">Videos</label><br>
+                                    <br>    
+                                    <p>Conta para gente o que achou do site: </p>
+                                    <textarea name="message" rows="10" cols="70">Digite aqui sua mensagem.</textarea>
+                                    <br>
+                                    <br>
+                    
+                                    <input type="submit" value="Enviar">
+                                    <input type="reset" value="Apagar">
+                                </fieldset>
+    
+                            </form>
+                        </td>
+                        <td><h5>Publicidade</h5>
+                            <a href="https://www.mackenzie.br/"><img src="publicidade_mackenzie.jpg" alt="Mackenzie Especialização"></a>
+                            <h5>Publicidade</h5>
+                            <a href="https://querobolsa.com.br/"><img src="publicidade_querobolsa.jpg" alt="Publicidade Quero Bolsa"></a>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td colspan="2"><h4 class="center">Entre em contato</h4>
+                        <p class="center">Telefone: (11) 1234-3521<br>E-mail: equipesiteTI@gmail.com<br>
+                        Endereço: Rua João Montes, 123 - São Paulo.
+                        </p>
+                        </td>
+                    </tr>
+    
+                </tbody>
+            </table>
+        </section>
+        <footer><p class="pfooter">Desenvolvido por: Elisa Alves.</p></footer>
+
+    </body>
+</html>
+
+
+
+
